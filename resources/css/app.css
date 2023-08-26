@@ -1,6 +1,6 @@
 .container {
-    width: 500px;
-    margin: 0 auto;
+    width: 100%;
+    margin-top: 100px;
 }
 .form input {
     border: 1px solid #ccc;
