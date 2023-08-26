@@ -11973,25 +11973,35 @@ textarea.form-control-lg {
   }
 }
 .container {
-    width: 100%;
     margin-top: 100px;
 }
+
 .form input {
     border: 1px solid #ccc;
+    box-shadow: 1px 1px 6px gray;
     padding: 10px;
 }
 .form button {
     padding: 10px;
+    box-shadow: 1px 1px 6px gray;
     background-color: darksalmon;
     border: 1px solid darksalmon;
     color: #fff;
     cursor: pointer;
+    transition: 0.3s;
 }
-.list {
+
+.form button:hover {
+    background-color: rgb(232, 122, 86);
+}
+
+.list li {
+    margin: 20px 0;
+    box-shadow: 2px 2px 5px black;
     padding: 10px;
 }
 .list li {
-    list-style: square;
+    list-style: none;
     margin-bottom: 5px;
     font-size: 18px;
 }

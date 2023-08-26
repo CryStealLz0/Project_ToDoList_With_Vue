@@ -6,23 +6,42 @@
             <button type="submit">Submit</button>
         </form>
         <ul class="list">
-            <li v-for="(item, index) in list" :key="index">
+            <li
+                v-for="(item, index) in list"
+                :key="index"
+                style="border: 1px solid black; width: 400px"
+            >
                 <div>
-                    <input
-                        v-if="!item.checked"
-                        type="text"
-                        v-model="item.title"
-                        @change="onUpdateTitle"
-                    />
-                    <span v-else style="text-decoration: line-through">{{
-                        item.title
-                    }}</span>
+                    <div
+                        style="
+                            display: flex;
+                            flex-direction: row;
+                            margin-bottom: 10px;
+                            margin-top: 10px;
+                        "
+                    >
+                        <input
+                            type="checkbox"
+                            v-model="item.checked"
+                            @change="onUpdateTitle"
+                        />
+                        <span style="padding-left: 8px; font-size: small"
+                            >Telah Terpenuhi</span
+                        >
+                    </div>
+                    <div>
+                        <input
+                            v-if="!item.checked"
+                            type="text"
+                            v-model="item.title"
+                            @change="onUpdateTitle"
+                        />
+                        <span v-else style="text-decoration: line-through">{{
+                            item.title
+                        }}</span>
+                    </div>
                 </div>
-                <input
-                    type="checkbox"
-                    v-model="item.checked"
-                    @change="onUpdateTitle"
-                />
+
                 <span class="delete" @click="deleteList(index)">Hapus</span>
             </li>
         </ul>
@@ -55,7 +74,7 @@ export default {
                 this.list.splice(index, 1);
                 localStorage.setItem("todoList", JSON.stringify(this.list));
             } else {
-                alert("Kintil");
+                alert("To-Do telah di Hapus!");
             }
         },
     },
