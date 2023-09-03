@@ -11,9 +11,9 @@ export default {
     data: function () {
         return {
             list: [
-                { title: "Menyapu" },
-                { title: "Mengepel" },
-                { title: "Melap" },
+                { title: "Menyapu Rumah", status: false },
+                { title: "Mengepel Lantai", status: false },
+                { title: "Melap Kaca", status: false },
             ],
         };
     },

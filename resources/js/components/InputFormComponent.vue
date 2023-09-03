@@ -1,8 +1,8 @@
 <template>
     <div class="form">
         <input type="text" v-model="inputform" />
-        <button-form @emit-click="reset" text="Reset" color="blue" />
-        <button-form @emit-click="addList" text="Submit" />
+        <button-form text="Reset" @emit-click="reset" color="blue" />
+        <button-form text="Submit" @emit-click="addList" />
     </div>
 </template>
 
@@ -25,3 +25,5 @@ export default {
     },
 };
 </script>
+
+<style></style>

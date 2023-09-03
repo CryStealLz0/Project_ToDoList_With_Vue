@@ -1,10 +1,11 @@
 <template>
     <ul class="list">
-        <li v-for="(item, index) in lisdata" :key="index">
-            {{ item.title }}
+        <li ul v-for="(item, index) in listdata" :key="index">
+            <input type="checkbox" :id="'list' + index" v-model="item.status" />
+            <label :class="item.status ? 'done' : ''"> {{ item.title }}</label>
             <button-form
-                @emit-click="deleteList(index)"
                 text="Hapus"
+                @emit-click="deleteList(index)"
                 color="transparent"
             />
         </li>

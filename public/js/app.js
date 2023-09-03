@@ -19938,11 +19938,14 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       list: [{
-        title: "Menyapu"
+        title: "Menyapu Rumah",
+        status: false
       }, {
-        title: "Mengepel"
+        title: "Mengepel Lantai",
+        status: false
       }, {
-        title: "Melap"
+        title: "Melap Kaca",
+        status: false
       }]
     };
   },
@@ -20051,12 +20054,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $data.inputform = $event;
     })
   }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.inputform]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_button_form, {
-    onEmitClick: $options.reset,
     text: "Reset",
+    onEmitClick: $options.reset,
     color: "blue"
   }, null, 8 /* PROPS */, ["onEmitClick"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_button_form, {
-    onEmitClick: $options.addList,
-    text: "Submit"
+    text: "Submit",
+    onEmitClick: $options.addList
   }, null, 8 /* PROPS */, ["onEmitClick"])]);
 }
 
@@ -20078,16 +20081,26 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "list"
 };
+var _hoisted_2 = ["id", "onUpdate:modelValue"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_button_form = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("button-form");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.lisdata, function (item, index) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("ul", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.listdata, function (item, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
+      ul: "",
       key: index
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.title) + " ", 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_button_form, {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+      type: "checkbox",
+      id: 'list' + index,
+      "onUpdate:modelValue": function onUpdateModelValue($event) {
+        return item.status = $event;
+      }
+    }, null, 8 /* PROPS */, _hoisted_2), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, item.status]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(item.status ? 'done' : '')
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.title), 3 /* TEXT, CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_button_form, {
+      text: "Hapus",
       onEmitClick: function onEmitClick($event) {
         return $options.deleteList(index);
       },
-      text: "Hapus",
       color: "transparent"
     }, null, 8 /* PROPS */, ["onEmitClick"])]);
   }), 128 /* KEYED_FRAGMENT */))]);
