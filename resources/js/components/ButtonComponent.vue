@@ -30,6 +30,7 @@ export default {
     font-size: 11px;
     color: darksalmon;
     background: transparent;
+    border: none;
 }
 
 .blue {
