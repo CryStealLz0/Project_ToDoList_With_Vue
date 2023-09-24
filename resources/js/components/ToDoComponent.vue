@@ -26,7 +26,8 @@ export default {
             this.$store.dispatch("addList", newList);
         },
         deleteList(index) {
-            this.list.splice(index, 1);
+            // this.list.splice(index, 1);
+            this.$store.commit("DELETE_TODO", index);
         },
     },
     mounted() {

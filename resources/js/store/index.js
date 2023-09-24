@@ -22,5 +22,8 @@ export default createStore({
         ADD_TODO(state, payload) {
             state.list.push(payload);
         },
+        DELETE_TODO(state, payload) {
+            state.list.splice(payload, 1);
+        },
     },
 });

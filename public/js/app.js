@@ -20215,7 +20215,8 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       this.$store.dispatch("addList", newList);
     },
     deleteList: function deleteList(index) {
-      this.list.splice(index, 1);
+      // this.list.splice(index, 1);
+      this.$store.commit("DELETE_TODO", index);
     }
   },
   mounted: function mounted() {
@@ -20547,6 +20548,9 @@ __webpack_require__.r(__webpack_exports__);
   mutations: {
     ADD_TODO: function ADD_TODO(state, payload) {
       state.list.push(payload);
+    },
+    DELETE_TODO: function DELETE_TODO(state, payload) {
+      state.list.splice(payload, 1);
     }
   }
 }));
